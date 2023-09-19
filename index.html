@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="stylesheet" href="estilos/estilos.css">
     <link rel="stylesheet" href="estilos/media-query.css">
 </head>
@@ -18,11 +19,42 @@
                 <p>Seja bem-vindo(a) novamente. Faça login para acessar sua conta
                     e poder fazer as configurações no seu ambiente.
                 </p>
-                <form action="login.php" method="post"></form>
+                <form action="login.php" method="post" autocomplete="on">
+
+                    <div class="campo">
+                        <span class="material-symbols-outlined size-20">person</span>
+                        <input type="email" name="email" id="iemail" required
+                        placeholder="seu e-mail" autocomplete="email" maxlength="30">
+                        <label for="iemail">Login</label>
+                    </div>
+
+                    <div class="campo">
+                        <span class="material-symbols-outlined size-20">vpn_key</span>
+                        <input type="password" name="sen" id="isen" required minlength="6"
+                        maxlength="15" placeholder="sua senha" autocomplete="current-password">
+                        <label for="isen">Senha</label>
+                    </div>
+                   <p>
+                    <input type="submit" value="Entrar">
+                   </p> 
+                   <p>
+                    <button id="Esqueci" onclick="clicar()">Esqueci a Senha</button>
+                    <span class="material-symbols-outlined size-20">mail</span>
+
+                   </p>
+                </form>
 
             </div>
         </section>
     </main>
-    
+       
+     <script>
+          function clicar(){
+            var clicou = document.getElementById('Esqueci')
+            clicou.addEventListener('click',function(){
+                alert('Entre em contato para recuperar a sua senha.')
+            })
+          }
+     </script>
 </body>
 </html>
